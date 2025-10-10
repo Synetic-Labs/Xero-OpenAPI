@@ -20358,6 +20358,10 @@ components:
       type: object
       externalDocs:
         url: http://developer.xero.com/documentation/api/accounts/
+      required:
+        - Code
+        - Name
+        - Type
       properties:
         Code:
           description: Customer defined alpha numeric account code e.g 200 or SALES (max length = 10)
@@ -20656,6 +20660,7 @@ components:
             $ref: '#/components/schemas/ValidationError'
       required:
         - Type
+        - Contact
         - LineItems
         - BankAccount
       type: object
@@ -21064,6 +21069,10 @@ components:
     PaymentService:
       externalDocs:
         url: http://developer.xero.com/documentation/api/branding-themes/
+      required:
+        - PaymentServiceName
+        - PaymentServiceUrl
+        - PayNowText
       properties:
         PaymentServiceID:
           description: Xero identifier
@@ -21104,6 +21113,8 @@ components:
     Contact:
       externalDocs:
         url: http://developer.xero.com/documentation/api/contacts/
+      required:
+        - Name
       properties:
         ContactID:
           description: Xero identifier
@@ -22235,6 +22246,10 @@ components:
     Invoice:
       externalDocs:
         url: http://developer.xero.com/documentation/api/invoices/
+      required:
+        - Type
+        - Contact
+        - LineItems
       properties:
         Type:
           description: See Invoice Types
@@ -22719,6 +22734,9 @@ components:
     LinkedTransaction:
       externalDocs:
         url: http://developer.xero.com/documentation/api/linked-transactions/
+      required:
+        - SourceTransactionID
+        - SourceLineItemID
       properties:
         SourceTransactionID:
           description: Filter by the SourceTransactionID. Get all the linked transactions created from a particular ACCPAY invoice
@@ -23713,6 +23731,8 @@ components:
     Payment:
       externalDocs:
         url: http://developer.xero.com/documentation/api/payments/
+      required:
+        - PaymentID
       properties:
         Invoice:
           $ref: '#/components/schemas/Invoice'
@@ -23963,6 +23983,9 @@ components:
     PurchaseOrder:
       externalDocs:
         url: http://developer.xero.com/documentation/api/purchase-orders/
+      required:
+        - Contact
+        - LineItems
       properties:
         Contact:
           $ref: '#/components/schemas/Contact'
@@ -24109,6 +24132,10 @@ components:
     Quote:
       externalDocs:
         url: http://developer.xero.com/documentation/api/Quotes/
+      required:
+        - Contact
+        - Date
+        - LineItems
       properties:
         QuoteID:
           description: QuoteID GUID is automatically generated and is returned after create or GET.
@@ -24334,6 +24361,14 @@ components:
     RepeatingInvoice:
       externalDocs:
         url: http://developer.xero.com/documentation/api/repeating-invoices/
+      required:
+        - Type
+        - Contact
+        - Schedule
+        - LineItems
+        - LineAmountTypes
+        - CurrencyCode
+        - Status
       properties:
         Type:
           description: See Invoice Types
