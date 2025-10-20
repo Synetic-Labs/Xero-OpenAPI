@@ -24666,7 +24666,7 @@ components:
         ReceiptNumber:
           description: Xero generated sequence number for receipt in current claim for a given user
           readOnly: true
-          type: string
+          type: integer
         UpdatedDateUTC:
           description: Last modified date UTC format
           type: string
