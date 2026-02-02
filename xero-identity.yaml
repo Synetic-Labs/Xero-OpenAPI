@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 9.1.1
+  version: 10.1.0
   title: Xero OAuth 2 Identity Service API
   description: These endpoints are related to managing authentication tokens and identity for Xero API
   termsOfService: https://developer.xero.com/xero-developer-platform-terms-conditions/
@@ -42,7 +42,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Connection'
+                  $ref: "#/components/schemas/Connection"
               example: '[ { "id": "7cb59f93-2964-421d-bb5e-a0f7a4572a44", "tenantId": "fe79f7dd-b6d4-4a92-ba7b-538af6289c58", "tenantName": "Demo Company (NZ)", "tenantType": "ORGANISATION", "createdDateUtc": "2019-12-07T18:46:19.5165400", "updatedDateUtc": "2019-12-07T18:46:19.5187840" } ]'
   /Connections/{id}:
     delete:

@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Xero Accounting API
-  version: 9.1.1
+  version: 10.1.0
   termsOfService: https://developer.xero.com/xero-developer-platform-terms-conditions/
   contact:
     name: Xero Platform Team
@@ -700,10 +700,10 @@ paths:
           default: LocalDate.now()
           java: LocalDate.now()
           csharp: DateTime.Now
-          node: '''2020-12-10'''
+          node: "'2020-12-10'"
           php: new DateTime('2020-12-10')
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - paymentAccount:
           is_object: true
           key: paymentAccount
@@ -1599,7 +1599,7 @@ paths:
                     CurrencyCode: USD
                     StatusAttributeString: ERROR
                     ValidationErrors:
-                      - Message: 'The Contact must contain at least 1 of the following elements to identify the contact: Name, ContactID, ContactNumber'
+                      - Message: "The Contact must contain at least 1 of the following elements to identify the contact: Name, ContactID, ContactNumber"
         "400":
           $ref: "#/components/responses/400Error"
       requestBody:
@@ -1856,7 +1856,7 @@ paths:
                     CurrencyCode: USD
                     StatusAttributeString: ERROR
                     ValidationErrors:
-                      - Message: 'The Contact must contain at least 1 of the following elements to identify the contact: Name, ContactID, ContactNumber'
+                      - Message: "The Contact must contain at least 1 of the following elements to identify the contact: Name, ContactID, ContactNumber"
         "400":
           $ref: "#/components/responses/400Error"
       requestBody:
@@ -3253,9 +3253,9 @@ paths:
           description: Filter by BudgetID. Allows you to retrieve a specific individual budget.
           style: form
           explode: false
-          example: '&quot;00000000-0000-0000-0000-000000000000&quot;'
+          example: "&quot;00000000-0000-0000-0000-000000000000&quot;"
           x-example-java: UUID.fromString("00000000-0000-0000-0000-000000000000")
-          x-example-php: '&quot;00000000-0000-0000-0000-000000000000&quot;'
+          x-example-php: "&quot;00000000-0000-0000-0000-000000000000&quot;"
           x-example-csharp: Guid.Parse("00000000-0000-0000-0000-000000000000");
           schema:
             type: string
@@ -3421,9 +3421,9 @@ paths:
           description: Filter by a comma separated list of ContactIDs. Allows you to retrieve a specific set of contacts in a single call.
           style: form
           explode: false
-          example: '&quot;00000000-0000-0000-0000-000000000000&quot;'
+          example: "&quot;00000000-0000-0000-0000-000000000000&quot;"
           x-example-java: Arrays.asList(UUID.fromString("00000000-0000-0000-0000-000000000000"))
-          x-example-php: '&quot;00000000-0000-0000-0000-000000000000&quot;'
+          x-example-php: "&quot;00000000-0000-0000-0000-000000000000&quot;"
           x-example-csharp: new List&lt;Guid&gt;{Guid.Parse("00000000-0000-0000-0000-000000000000")};
           schema:
             type: array
@@ -5154,11 +5154,11 @@ paths:
           java_datatype: LocalDate
           default: LocalDate.now()
           java: LocalDate.now()
-          node: '''2020-12-10'''
+          node: "'2020-12-10'"
           csharp: DateTime.Now
           php: new DateTime('2020-12-10')
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - contact:
           is_object: true
           key: contact
@@ -5409,10 +5409,10 @@ paths:
           default: LocalDate.now()
           java: LocalDate.now()
           csharp: DateTime.Now
-          node: '''2020-12-10'''
+          node: "'2020-12-10'"
           php: new DateTime('2020-12-10')
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - contact:
           is_object: true
           key: contact
@@ -5778,10 +5778,10 @@ paths:
           default: LocalDate.now()
           java: LocalDate.now()
           csharp: DateTime.Now
-          node: '''2020-12-10'''
+          node: "'2020-12-10'"
           php: new DateTime('2020-12-10')
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - contact:
           is_object: true
           key: contact
@@ -6241,10 +6241,10 @@ paths:
           default: LocalDate.now()
           java: LocalDate.now()
           csharp: DateTime.Now
-          node: '''2020-12-10'''
+          node: "'2020-12-10'"
           php: new DateTime('2020-12-10')
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - invoice:
           is_object: true
           key: invoice
@@ -6850,7 +6850,7 @@ paths:
                     User:
                       UserID: d1164823-0ac1-41ad-987b-b4e30fe0b273
                       EmailAddress: api@xero.com
-                      FirstName: 'API '
+                      FirstName: "API "
                       LastName: Team
                       UpdatedDateUTC: /Date(1511957179217+0000)/
                       IsSubscriber: true
@@ -6882,10 +6882,10 @@ paths:
           default: LocalDate.now()
           java: LocalDate.now()
           csharp: DateTime.Now
-          node: '''2020-12-10'''
+          node: "'2020-12-10'"
           php: new DateTime('2020-12-10')
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - user:
           is_object: true
           key: user
@@ -7010,7 +7010,7 @@ paths:
                     User:
                       UserID: d1164823-0ac1-41ad-987b-b4e30fe0b273
                       EmailAddress: api@xero.com
-                      FirstName: 'API '
+                      FirstName: "API "
                       LastName: Team
                       UpdatedDateUTC: /Date(1511957179217+0000)/
                       IsSubscriber: true
@@ -7022,7 +7022,7 @@ paths:
                         User:
                           UserID: d1164823-0ac1-41ad-987b-b4e30fe0b273
                           EmailAddress: api@xero.com
-                          FirstName: 'API '
+                          FirstName: "API "
                           LastName: Team
                           UpdatedDateUTC: /Date(1511957179217+0000)/
                           IsSubscriber: true
@@ -7092,7 +7092,7 @@ paths:
                     User:
                       UserID: d1164823-0ac1-41ad-987b-b4e30fe0b273
                       EmailAddress: api@xero.com
-                      FirstName: 'API '
+                      FirstName: "API "
                       LastName: Team
                       UpdatedDateUTC: /Date(1511957179217+0000)/
                       IsSubscriber: true
@@ -7104,7 +7104,7 @@ paths:
                         User:
                           UserID: d1164823-0ac1-41ad-987b-b4e30fe0b273
                           EmailAddress: api@xero.com
-                          FirstName: 'API '
+                          FirstName: "API "
                           LastName: Team
                           UpdatedDateUTC: /Date(1511957179217+0000)/
                           IsSubscriber: true
@@ -7159,10 +7159,10 @@ paths:
           default: LocalDate.now()
           java: LocalDate.now()
           csharp: DateTime.Now
-          node: '''2020-12-10'''
+          node: "'2020-12-10'"
           php: new DateTime('2020-12-10')
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - user:
           is_object: true
           key: user
@@ -7275,7 +7275,7 @@ paths:
                     User:
                       UserID: d1164823-0ac1-41ad-987b-b4e30fe0b273
                       EmailAddress: api@xero.com
-                      FirstName: 'API '
+                      FirstName: "API "
                       LastName: Team
                       UpdatedDateUTC: /Date(1511957179217+0000)/
                       IsSubscriber: true
@@ -7287,7 +7287,7 @@ paths:
                         User:
                           UserID: d1164823-0ac1-41ad-987b-b4e30fe0b273
                           EmailAddress: api@xero.com
-                          FirstName: 'API '
+                          FirstName: "API "
                           LastName: Team
                           UpdatedDateUTC: /Date(1511957179217+0000)/
                           IsSubscriber: true
@@ -7436,9 +7436,9 @@ paths:
           description: Filter by a comma-separated list of InvoicesIDs.
           style: form
           explode: false
-          example: '&quot;00000000-0000-0000-0000-000000000000&quot;'
+          example: "&quot;00000000-0000-0000-0000-000000000000&quot;"
           x-example-java: Arrays.asList(UUID.fromString("00000000-0000-0000-0000-000000000000"))
-          x-example-php: '&quot;00000000-0000-0000-0000-000000000000&quot;'
+          x-example-php: "&quot;00000000-0000-0000-0000-000000000000&quot;"
           x-example-csharp: new List&lt;Guid&gt;{Guid.Parse("00000000-0000-0000-0000-000000000000")};
           schema:
             type: array
@@ -7451,10 +7451,10 @@ paths:
           description: Filter by a comma-separated list of InvoiceNumbers.
           style: form
           explode: false
-          example: '&quot;INV-001&quot;, &quot;INV-002&quot;'
+          example: "&quot;INV-001&quot;, &quot;INV-002&quot;"
           x-example-java: Arrays.asList("INV-001","INV-002")
-          x-example-php: '&quot;INV-001&quot;, &quot;INV-002&quot;'
-          x-example-csharp: new List&lt;string&gt;{&quotINV-001&quot,&quotINV-002&quot};
+          x-example-php: "&quot;INV-001&quot;, &quot;INV-002&quot;"
+          x-example-csharp: new List&lt;string&gt;{&quot;INV-001&quot;,&quot;INV-002&quot;};
           schema:
             type: array
             items:
@@ -7465,9 +7465,9 @@ paths:
           description: Filter by a comma-separated list of ContactIDs.
           style: form
           explode: false
-          example: '&quot;00000000-0000-0000-0000-000000000000&quot;'
+          example: "&quot;00000000-0000-0000-0000-000000000000&quot;"
           x-example-java: Arrays.asList(UUID.fromString("00000000-0000-0000-0000-000000000000"))
-          x-example-php: '&quot;00000000-0000-0000-0000-000000000000&quot;'
+          x-example-php: "&quot;00000000-0000-0000-0000-000000000000&quot;"
           x-example-csharp: new List&lt;Guid&gt;{Guid.Parse(&quot00000000-0000-0000-0000-000000000000&quot)};
           schema:
             type: array
@@ -7479,9 +7479,9 @@ paths:
           x-snake: statuses
           description: Filter by a comma-separated list Statuses. For faster response times we recommend using these explicit parameters instead of passing OR conditions into the Where filter.
           explode: false
-          example: '&quot;DRAFT&quot;, &quot;SUBMITTED&quot;'
+          example: "&quot;DRAFT&quot;, &quot;SUBMITTED&quot;"
           x-example-java: Arrays.asList("DRAFT","SUBMITTED")
-          x-example-php: '&quot;DRAFT&quot;, &quot;SUBMITTED&quot;'
+          x-example-php: "&quot;DRAFT&quot;, &quot;SUBMITTED&quot;"
           x-example-csharp: new List&lt;string&gt;{&quotDRAFT&quot,&quotSUBMITTED&quot};
           schema:
             type: array
@@ -7666,9 +7666,9 @@ paths:
           java: LocalDate.of(2020, Month.OCTOBER, 10)
           csharp: new DateTime(2020, 10, 10)
           php: new DateTime('2020-10-10')
-          node: '''2020-10-10'''
+          node: "'2020-10-10'"
           python: dateutil.parser.parse('2020-10-10T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - dueDateValue:
           is_date: true
           key: dueDateValue
@@ -7680,9 +7680,9 @@ paths:
           java: LocalDate.of(2020, Month.OCTOBER, 28)
           csharp: new DateTime(2020, 10, 10)
           php: new DateTime('2020-10-28')
-          node: '''2020-10-28'''
+          node: "'2020-10-28'"
           python: dateutil.parser.parse('2020-10-28T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - contact:
           is_object: true
           key: contact
@@ -8019,9 +8019,9 @@ paths:
           java: LocalDate.of(2020, Month.OCTOBER, 10)
           csharp: new DateTime(2020, 10, 10)
           php: new DateTime('2020-10-10')
-          node: '''2020-10-10'''
+          node: "'2020-10-10'"
           python: dateutil.parser.parse('2020-10-10T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - dueDateValue:
           is_date: true
           key: dueDateValue
@@ -8032,9 +8032,9 @@ paths:
           java: LocalDate.of(2020, Month.OCTOBER, 28)
           csharp: new DateTime(2020, 10, 10)
           php: new DateTime('2020-10-28')
-          node: '''2020-10-28'''
+          node: "'2020-10-28'"
           python: dateutil.parser.parse('2020-10-28T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - contact:
           is_object: true
           key: contact
@@ -8446,7 +8446,7 @@ paths:
                     FullyPaidOnDate: /Date(1552953600000+0000)/
                     StatusAttributeString: ERROR
                     ValidationErrors:
-                      - Message: 'Invoice # must be unique.'
+                      - Message: "Invoice # must be unique."
     post:
       security:
         - OAuth2:
@@ -10041,7 +10041,7 @@ paths:
                     LineAmountTypes: NoTax
                     UpdatedDateUTC: /Date(1552357188083+0000)/
                     ManualJournalID: 0b159335-606b-485f-b51b-97b3b32bad32
-                    Narration: 'Reversal: These aren''''t the droids you are looking for'
+                    Narration: "Reversal: These aren''t the droids you are looking for"
                     JournalLines: []
                     ShowOnCashBasisReports: true
                     HasAttachments: false
@@ -10083,9 +10083,9 @@ paths:
           java: LocalDate.of(2020, Month.OCTOBER, 10)
           csharp: new DateTime(2020, 10, 10)
           php: new DateTime('2019-10-10')
-          node: '''2020-10-10'''
+          node: "'2020-10-10'"
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - manualJournalLines:
           is_list: true
           key: manualJournalLines
@@ -10288,9 +10288,9 @@ paths:
           java: LocalDate.of(2020, Month.OCTOBER, 10)
           csharp: new DateTime(2020, 10, 10)
           php: new DateTime('2020-10-10')
-          node: '''2020-10-10'''
+          node: "'2020-10-10'"
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - manualJournalLines:
           is_list: true
           key: manualJournalLines
@@ -10556,9 +10556,9 @@ paths:
           java: LocalDate.of(2020, Month.OCTOBER, 10)
           csharp: new DateTime(2020, 10, 10)
           php: new DateTime('2020-10-10')
-          node: '''2020-10-10'''
+          node: "'2020-10-10'"
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - manualJournalLines:
           is_list: true
           key: manualJournalLines
@@ -11007,7 +11007,7 @@ paths:
                     CreatedDateUTC: /Date(1455827393000)/
                     OrganisationEntityType: COMPANY
                     Timezone: NEWZEALANDSTANDARDTIME
-                    ShortCode: '!mBdtL'
+                    ShortCode: "!mBdtL"
                     OrganisationID: b2c885a9-4bb9-4a00-9b6e-6c2bf60b1a2b
                     Edition: BUSINESS
                     Class: PREMIUM
@@ -11129,6 +11129,20 @@ paths:
             type: integer
         - $ref: "#/components/parameters/unitdp"
         - $ref: "#/components/parameters/pageSize"
+        - in: query
+          name: References
+          x-snake: references
+          description: Filter by a comma-separated list of References
+          style: form
+          explode: false
+          example: "&quot;Ref1&quot;, &quot;Ref2&quot;"
+          x-example-java: Arrays.asList("Ref1","Ref2")
+          x-example-php: "&quot;Ref1&quot;, &quot;Ref2&quot;"
+          x-example-csharp: new List&lt;string&gt;{&quot;Ref1&quot;,&quot;Ref2&quot;}
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         "200":
           description: Success - return response of type Overpayments array with all Overpayments
@@ -11150,6 +11164,7 @@ paths:
                   - OverpaymentID: 098b4dcb-5622-4699-87f8-9d40c4ccceb3
                     ID: 098b4dcb-5622-4699-87f8-9d40c4ccceb3
                     Type: SPEND-OVERPAYMENT
+                    Reference: Reference for payment1
                     RemainingCredit: 500.00
                     Allocations: []
                     Payments: []
@@ -11175,6 +11190,7 @@ paths:
                   - OverpaymentID: 2a8bda49-8908-473b-8bcf-1f90990460eb
                     ID: 2a8bda49-8908-473b-8bcf-1f90990460eb
                     Type: RECEIVE-OVERPAYMENT
+                    Reference: Reference for payment2
                     RemainingCredit: 20.00
                     Allocations: []
                     Payments: []
@@ -11200,6 +11216,7 @@ paths:
                   - OverpaymentID: ed7f6041-c915-4667-bd1d-54c48e92161e
                     ID: ed7f6041-c915-4667-bd1d-54c48e92161e
                     Type: SPEND-OVERPAYMENT
+                    Reference: Reference for payment3
                     RemainingCredit: 3000.00
                     Allocations: []
                     Payments: []
@@ -11225,6 +11242,7 @@ paths:
                   - OverpaymentID: 0859adbc-ea00-40cd-a877-258cf8644975
                     ID: 0859adbc-ea00-40cd-a877-258cf8644975
                     Type: RECEIVE-OVERPAYMENT
+                    Reference: Reference for payment4
                     RemainingCredit: 20.00
                     Allocations: []
                     Payments: []
@@ -11250,6 +11268,7 @@ paths:
                   - OverpaymentID: 687b877f-634a-415d-92b2-74e62977de30
                     ID: 687b877f-634a-415d-92b2-74e62977de30
                     Type: RECEIVE-OVERPAYMENT
+                    Reference: Reference for payment5
                     RemainingCredit: 20.00
                     Allocations: []
                     Payments: []
@@ -11303,6 +11322,7 @@ paths:
                     ID: ed7f6041-c915-4667-bd1d-54c48e92161e
                     CurrencyRate: 1.000000
                     Type: SPEND-OVERPAYMENT
+                    Reference: Reference for payment
                     RemainingCredit: 2999.00
                     Allocations:
                       - Amount: 1.00
@@ -11409,10 +11429,10 @@ paths:
           default: LocalDate.now()
           java: LocalDate.now()
           csharp: DateTime.Now
-          node: '''2020-12-10'''
+          node: "'2020-12-10'"
           php: new DateTime('2020-12-10')
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - invoice:
           is_object: true
           key: invoice
@@ -11779,9 +11799,9 @@ paths:
           java: LocalDate.now()
           csharp: DateTime.Now
           php: new DateTime('2020-10-10')
-          node: '''2020-10-10'''
+          node: "'2020-10-10'"
           python: dateutil.parser.parse('2020-10-10T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - invoice:
           is_object: true
           key: invoice
@@ -11966,9 +11986,9 @@ paths:
           java: LocalDate.now()
           csharp: DateTime.Now
           php: new DateTime('2020-10-10')
-          node: '''2020-10-10'''
+          node: "'2020-10-10'"
           python: dateutil.parser.parse('2020-10-10T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - invoice:
           is_object: true
           key: invoice
@@ -12736,10 +12756,10 @@ paths:
           default: LocalDate.now()
           java: LocalDate.now()
           csharp: DateTime.Now
-          node: '''2020-12-10'''
+          node: "'2020-12-10'"
           php: new DateTime('2020-12-10')
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - invoice:
           is_object: true
           key: invoice
@@ -13139,9 +13159,9 @@ paths:
           java: LocalDate.now()
           csharp: DateTime.Now
           php: new DateTime('2020-12-10')
-          node: '''2020-10-10'''
+          node: "'2020-10-10'"
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - contact:
           is_object: true
           key: contact
@@ -13381,9 +13401,9 @@ paths:
           java: LocalDate.now()
           csharp: DateTime.Now
           php: new DateTime('2020-12-10')
-          node: '''2020-10-10'''
+          node: "'2020-10-10'"
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - contact:
           is_object: true
           key: contact
@@ -14410,9 +14430,9 @@ paths:
           java: LocalDate.now()
           csharp: DateTime.Now
           php: new DateTime('2020-12-10')
-          node: '''2020-10-10'''
+          node: "'2020-10-10'"
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - contact:
           is_object: true
           key: contact
@@ -14602,9 +14622,9 @@ paths:
           java: LocalDate.now()
           csharp: DateTime.Now
           php: new DateTime('2020-12-10')
-          node: '''2020-10-10'''
+          node: "'2020-10-10'"
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - contact:
           is_object: true
           key: contact
@@ -14862,9 +14882,9 @@ paths:
           java: LocalDate.now()
           csharp: DateTime.Now
           php: new DateTime('2020-12-10')
-          node: '''2020-10-10'''
+          node: "'2020-10-10'"
           python: dateutil.parser.parse('2020-12-03T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - contact:
           is_object: true
           key: contact
@@ -15278,7 +15298,7 @@ paths:
                     Status: DRAFT
                     User:
                       UserID: d1164823-0ac1-41ad-987b-b4e30fe0b273
-                      FirstName: 'API '
+                      FirstName: "API "
                       LastName: Team
                       ValidationErrors: []
                       Warnings: []
@@ -15480,7 +15500,7 @@ paths:
                     User:
                       UserID: d1164823-0ac1-41ad-987b-b4e30fe0b273
                       EmailAddress: api@xero.com
-                      FirstName: 'API '
+                      FirstName: "API "
                       LastName: Team
                       UpdatedDateUTC: /Date(1511957179217+0000)/
                       IsSubscriber: true
@@ -15605,7 +15625,7 @@ paths:
                     User:
                       UserID: d1164823-0ac1-41ad-987b-b4e30fe0b273
                       EmailAddress: api@xero.com
-                      FirstName: 'API '
+                      FirstName: "API "
                       LastName: Team
                       UpdatedDateUTC: /Date(1511957179217+0000)/
                       IsSubscriber: true
@@ -15702,9 +15722,9 @@ paths:
           java: LocalDate.now()
           csharp: DateTime.Now
           php: new DateTime('2020-12-10')
-          node: '''2020-10-10'''
+          node: "'2020-10-10'"
           python: dateutil.parser.parse('2020-10-10T00:00:00Z')
-          ruby: '''YYYY-MM-DD'''
+          ruby: "'YYYY-MM-DD'"
         - user:
           is_object: true
           key: user
@@ -15776,7 +15796,7 @@ paths:
                     User:
                       UserID: d1164823-0ac1-41ad-987b-b4e30fe0b273
                       EmailAddress: api@xero.com
-                      FirstName: 'API '
+                      FirstName: "API "
                       LastName: Team
                       UpdatedDateUTC: /Date(1511957179217+0000)/
                       IsSubscriber: true
@@ -16150,7 +16170,7 @@ paths:
                       NextScheduledDate: /Date(1555286400000+0000)/
                     RepeatingInvoiceID: 428c0d75-909f-4b04-8403-a48dc27283b0
                     Type: ACCREC
-                    Reference: '[Week]'
+                    Reference: "[Week]"
                     HasAttachments: true
                     ApprovedForSending: false
                     SendCopy: false
@@ -16217,7 +16237,7 @@ paths:
                       NextScheduledDate: /Date(1555286400000+0000)/
                     RepeatingInvoiceID: 428c0d75-909f-4b04-8403-a48dc27283b0
                     Type: ACCREC
-                    Reference: '[Week]'
+                    Reference: "[Week]"
                     HasAttachments: true
                     ApprovedForSending: false
                     SendCopy: false
@@ -16267,7 +16287,7 @@ paths:
                     DueDateType: OFFOLLOWINGMONTH
                     StartDate: /Date(1555286400000+0000)/
                   Type: ACCREC
-                  Reference: '[Week]'
+                  Reference: "[Week]"
                   ApprovedForSending: false
                   SendCopy: false
                   MarkAsSent: false
@@ -16324,7 +16344,7 @@ paths:
                       NextScheduledDate: /Date(1555286400000+0000)/
                     RepeatingInvoiceID: 428c0d75-909f-4b04-8403-a48dc27283b0
                     Type: ACCREC
-                    Reference: '[Week]'
+                    Reference: "[Week]"
                     HasAttachments: true
                     ApprovedForSending: false
                     SendCopy: false
@@ -16374,7 +16394,7 @@ paths:
                     DueDateType: OFFOLLOWINGMONTH
                     StartDate: /Date(1555286400000+0000)/
                   Type: ACCREC
-                  Reference: '[Week]'
+                  Reference: "[Week]"
                   ApprovedForSending: false
                   SendCopy: false
                   MarkAsSent: false
@@ -16433,7 +16453,7 @@ paths:
                       NextScheduledDate: /Date(1555286400000+0000)/
                     RepeatingInvoiceID: 428c0d75-909f-4b04-8403-a48dc27283b0
                     Type: ACCREC
-                    Reference: '[Week]'
+                    Reference: "[Week]"
                     HasAttachments: true
                     Attachments:
                       - AttachmentID: 2a488b0f-3966-4b6e-a7e1-b6d3286351f2
@@ -16512,7 +16532,7 @@ paths:
                       NextScheduledDate: /Date(1555286400000+0000)/
                     RepeatingInvoiceID: 428c0d75-909f-4b04-8403-a48dc27283b0
                     Type: ACCREC
-                    Reference: '[Week]'
+                    Reference: "[Week]"
                     HasAttachments: true
                     ApprovedForSending: false
                     SendCopy: false
@@ -16563,7 +16583,7 @@ paths:
                 NextScheduledDate: /Date(1555286400000+0000)/
               RepeatingInvoiceID: 428c0d75-909f-4b04-8403-a48dc27283b0
               Type: ACCREC
-              Reference: '[Week]'
+              Reference: "[Week]"
               HasAttachments: true
               ApprovedForSending: false
               SendCopy: false
@@ -19547,7 +19567,7 @@ paths:
             schema:
               $ref: "#/components/schemas/TrackingOption"
             example:
-              name: ' Bar'
+              name: " Bar"
   /TrackingCategories/{TrackingCategoryID}/Options/{TrackingOptionID}:
     parameters:
       - $ref: "#/components/parameters/requiredHeader"
@@ -19686,7 +19706,7 @@ paths:
                     OrganisationRole: FINANCIALADVISER
                   - UserID: d1164823-0ac1-41ad-987b-b4e30fe0b273
                     EmailAddress: api@xero.com
-                    FirstName: 'API '
+                    FirstName: "API "
                     LastName: Team
                     UpdatedDateUTC: /Date(1511957179217+0000)/
                     IsSubscriber: true
@@ -19740,6 +19760,7 @@ components:
             profile: your profile information
             accounting.attachments: Grant read-write access to attachments
             accounting.attachments.read: Grant read-only access to attachments
+            accounting.budgets.read: Grant read-only access to read budgets
             accounting.contacts: Grant read-write access to contacts and contact groups
             accounting.contacts.read: Grant read-only access to contacts and contact groups
             accounting.journals.read: Grant read-only access to journals
@@ -23910,6 +23931,10 @@ components:
           type: boolean
           default: "false"
           example: "false"
+        Reference:
+          description: An optional description for Overpayment
+          type: string
+          example: "Ref for payment"
         Attachments:
           description: See Attachments
           type: array
