@@ -1261,7 +1261,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/BankTransactions"
+                $ref: "#/components/schemas/BankTransactionsRead"
               example:
                 Id: 18e7e80c-5dca-4a57-974e-8b572cc5efe8
                 Status: OK
@@ -1898,7 +1898,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/BankTransactions"
+                $ref: "#/components/schemas/BankTransactionsRead"
               example:
                 Id: 612e204d-21ab-469b-ac84-afe0697b4461
                 Status: OK
@@ -2565,7 +2565,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/BankTransfers"
+                $ref: "#/components/schemas/BankTransfersRead"
               example:
                 Id: dfc0d130-9007-4a98-a5ef-6f01700f18e2
                 Status: OK
@@ -2789,7 +2789,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/BankTransfers"
+                $ref: "#/components/schemas/BankTransfersRead"
               example:
                 Id: 1a5fa46d-5ece-4ef2-89b1-77c293b5d833
                 Status: OK
@@ -20823,6 +20823,130 @@ components:
         - LineItems
         - BankAccount
       type: object
+    BankTransactionRead:
+      externalDocs:
+        url: http://developer.xero.com/documentation/api/banktransactions/
+      properties:
+        Type:
+          description: See Bank Transaction Types
+          type: string
+          enum:
+            - RECEIVE
+            - RECEIVE-OVERPAYMENT
+            - RECEIVE-PREPAYMENT
+            - SPEND
+            - SPEND-OVERPAYMENT
+            - SPEND-PREPAYMENT
+            - RECEIVE-TRANSFER
+            - SPEND-TRANSFER
+        Contact:
+          $ref: "#/components/schemas/Contact"
+        LineItems:
+          description: See LineItems
+          type: array
+          items:
+            $ref: "#/components/schemas/LineItem"
+        BankAccount:
+          $ref: "#/components/schemas/AccountRead"
+        IsReconciled:
+          description: Boolean to show if transaction is reconciled
+          type: boolean
+        Date:
+          description: Date of transaction – YYYY-MM-DD
+          type: string
+          x-is-msdate: true
+        Reference:
+          description: Reference for the transaction. Only supported for SPEND and RECEIVE transactions.
+          type: string
+        CurrencyCode:
+          $ref: "#/components/schemas/CurrencyCode"
+          type: string
+        CurrencyRate:
+          description: Exchange rate to base currency when money is spent or received. e.g.0.7500 Only used for bank transactions in non base currency. If this isn't specified for non base currency accounts then either the user-defined rate (preference) or the XE.com day rate will be used. Setting currency is only supported on overpayments.
+          type: number
+          format: double
+          x-is-money: true
+        Url:
+          description: URL link to a source document – shown as "Go to App Name"
+          type: string
+        Status:
+          description: See Bank Transaction Status Codes
+          type: string
+          enum:
+            - AUTHORISED
+            - DELETED
+            - VOIDED
+        LineAmountTypes:
+          $ref: "#/components/schemas/LineAmountTypes"
+          type: string
+        SubTotal:
+          description: Total of bank transaction excluding taxes
+          type: number
+          format: double
+          x-is-money: true
+        TotalTax:
+          description: Total tax on bank transaction
+          type: number
+          format: double
+          x-is-money: true
+        Total:
+          description: Total of bank transaction tax inclusive
+          type: number
+          format: double
+          x-is-money: true
+        BankTransactionID:
+          description: Xero generated unique identifier for bank transaction
+          type: string
+          format: uuid
+          example: 00000000-0000-0000-0000-000000000000
+        PrepaymentID:
+          description: Xero generated unique identifier for a Prepayment. This will be returned on BankTransactions with a Type of SPEND-PREPAYMENT or RECEIVE-PREPAYMENT
+          readOnly: true
+          type: string
+          format: uuid
+          example: 00000000-0000-0000-0000-000000000000
+        OverpaymentID:
+          description: Xero generated unique identifier for an Overpayment. This will be returned on BankTransactions with a Type of SPEND-OVERPAYMENT or RECEIVE-OVERPAYMENT
+          readOnly: true
+          type: string
+          format: uuid
+          example: 00000000-0000-0000-0000-000000000000
+        UpdatedDateUTC:
+          description: Last modified date UTC format
+          type: string
+          x-is-msdate-time: true
+          example: /Date(1573755038314)/
+          readOnly: true
+        HasAttachments:
+          description: Boolean to indicate if a bank transaction has an attachment
+          readOnly: true
+          type: boolean
+          default: "false"
+          example: "false"
+        StatusAttributeString:
+          description: A string to indicate if a invoice status
+          type: string
+        ValidationErrors:
+          description: Displays array of validation error messages from the API
+          type: array
+          items:
+            $ref: "#/components/schemas/ValidationError"
+      type: object
+    BankTransactionsRead:
+      type: object
+      x-objectArrayKey: bank_transactions
+      properties:
+        pagination:
+          $ref: "#/components/schemas/Pagination"
+        Warnings:
+          description: Displays array of warning messages from the API
+          type: array
+          items:
+            $ref: "#/components/schemas/ValidationError"
+        BankTransactions:
+          type: array
+          items:
+            $ref: "#/components/schemas/BankTransactionRead"
     LineAmountTypes:
       description: Line amounts are exclusive of tax by default if you don’t specify this element. See Line Amount Types
       type: string
@@ -21035,6 +21159,87 @@ components:
         - ToBankAccount
         - Amount
       type: object
+    BankTransferRead:
+      externalDocs:
+        url: http://developer.xero.com/documentation/api/bank-transfers/
+      properties:
+        FromBankAccount:
+          $ref: "#/components/schemas/AccountRead"
+        ToBankAccount:
+          $ref: "#/components/schemas/AccountRead"
+        Amount:
+          description: amount of the transaction
+          type: number
+          format: double
+          x-is-money: true
+        Date:
+          description: The date of the Transfer YYYY-MM-DD
+          type: string
+          x-is-msdate: true
+        BankTransferID:
+          description: The identifier of the Bank Transfer
+          readOnly: true
+          type: string
+          format: uuid
+        CurrencyRate:
+          description: The currency rate
+          readOnly: true
+          type: number
+          format: double
+          x-is-money: true
+        FromBankTransactionID:
+          description: The Bank Transaction ID for the source account
+          readOnly: true
+          type: string
+          format: uuid
+        ToBankTransactionID:
+          description: The Bank Transaction ID for the destination account
+          readOnly: true
+          type: string
+          format: uuid
+        FromIsReconciled:
+          description: The Bank Transaction boolean to show if it is reconciled for the source account
+          type: boolean
+          default: "false"
+          example: "false"
+        ToIsReconciled:
+          description: The Bank Transaction boolean to show if it is reconciled for the destination account
+          type: boolean
+          default: "false"
+          example: "false"
+        Reference:
+          description: Reference for the transactions.
+          type: string
+        HasAttachments:
+          description: Boolean to indicate if a Bank Transfer has an attachment
+          readOnly: true
+          type: boolean
+          default: "false"
+          example: "false"
+        CreatedDateUTC:
+          description: UTC timestamp of creation date of bank transfer
+          type: string
+          x-is-msdate-time: true
+          example: /Date(1573755038314)/
+          readOnly: true
+        ValidationErrors:
+          description: Displays array of validation error messages from the API
+          type: array
+          items:
+            $ref: "#/components/schemas/ValidationError"
+      required:
+        - FromBankAccount
+        - ToBankAccount
+        - Amount
+      type: object
+    BankTransfersRead:
+      type: object
+      x-objectArrayKey: bank_transfers
+      properties:
+        BankTransfers:
+          type: array
+          items:
+            $ref: "#/components/schemas/BankTransferRead"
     BatchPayments:
       type: object
       x-objectArrayKey: batch_payments
