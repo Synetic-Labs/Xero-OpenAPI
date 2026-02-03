@@ -48,7 +48,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Accounts"
+                $ref: "#/components/schemas/AccountsRead"
               example:
                 Accounts:
                   - AccountID: ebd06280-af70-4bed-97c6-7451a454ad85
@@ -187,7 +187,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Accounts"
+                $ref: "#/components/schemas/AccountsRead"
               example:
                 Id: 323455cc-9511-4451-a873-248d2983f38e
                 Status: OK
@@ -20621,6 +20621,21 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/ValidationError"
+    AccountsRead:
+      type: object
+      x-objectArrayKey: accounts
+      properties:
+        pagination:
+          $ref: "#/components/schemas/Pagination"
+        Warnings:
+          description: Displays array of warning messages from the API
+          type: array
+          items:
+            $ref: "#/components/schemas/ValidationError"
+        Accounts:
+          type: array
+          items:
+            $ref: "#/components/schemas/AccountRead"
     AccountType:
       description: See Account Types
       type: string
